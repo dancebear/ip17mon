@@ -138,7 +138,7 @@ func (loc *Locator) init(data []byte) {
 func newLocationInfo(str []byte) *LocationInfo {
 	fields := bytes.Split(str, []byte("\t"))
 	if len(fields) != 5 {
-		panic("unexpected ip info:" + string(str))
+		fields = [][]byte{[]byte(""), []byte(""), []byte(""), []byte(""), []byte("")}
 	}
 	info := &LocationInfo{
 		Country: string(fields[0]),
